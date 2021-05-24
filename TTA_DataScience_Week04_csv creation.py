@@ -57,16 +57,6 @@ class sld:
             self.subtitle = self.slide.placeholders[2]
             self.subtitle.text = data["placeholders"][2]
 
-
-
-#        self.layout = pr1.slide_layout[data[0]]
-#        self.slide = pr1.slides.add_slide(self.layout)
-#        self.title = self.slide.shapes.title
-#        self.title.text = data[1]
-#        self.subtitle = self.slide.placeholders[1]
-#        self.subtitle.text = data[2]
-
-
 # This function deals with importing the json file, manipulating the data,
 # saving the dataset as a vsc file and returning the dataset for use in the powerpoint presentation
 def deal_with_csv():
@@ -499,16 +489,9 @@ def main():
     for k, v in slide_content.items():
         sld(v, dataset)
 
-
-        #print(v["layout"])
-#    slide1_register = pr1.slide_layouts[3]
-#    slide1 = pr1.slides.add_slide(slide1_register)
-#    title=slide1.shapes.title
-#    left_side = slide1.placeholders[1]
-#    title.text = S2[0]
-#    left_side.text = S2[1]
-#    left_side.text_frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
+    # saves the presentation
     pr1.save("TTA_HLA_Week_04_pandas.pptx")
+    # and opens it
     os.startfile("TTA_HLA_Week_04_pandas.pptx")
     pass
 
